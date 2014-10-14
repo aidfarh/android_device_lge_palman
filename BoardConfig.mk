@@ -37,11 +37,12 @@ BOARD_KERNEL_BASE := 0x80200000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
 
+#TARGET_PREBUILT_KERNEL := device/lge/palman/kernel
+
 # Try to build the kernel
-TARGET_KERNEL_SOURCE := kernel/lge/v500
-#TARGET_PREBUILT_KERNEL := device/lge/v500/kernel
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 lpj=67677 androidboot.hardware=awifi vmalloc=600M
-TARGET_KERNEL_CONFIG := cyanogenmod_v500_defconfig
+TARGET_KERNEL_SOURCE := kernel/lge/palman
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 lpj=67677 androidboot.hardware=palman vmalloc=600M
+TARGET_KERNEL_CONFIG := custom_palman_defconfig
 
 
 BOARD_USES_ALSA_AUDIO:= true
@@ -58,7 +59,7 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
 BOARD_HOSTAPD_DRIVER := NL80211
 
-BOARD_EGL_CFG := device/lge/v500/egl.cfg
+BOARD_EGL_CFG := device/lge/palman/egl.cfg
 
 #BOARD_USES_HGL := true
 #BOARD_USES_OVERLAY := true
@@ -72,7 +73,7 @@ OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
 # Recovery
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
-RECOVERY_FSTAB_VERSION = 2
+#RECOVERY_FSTAB_VERSION = 2
 ENABLE_LOKI_RECOVERY := true
 BOARD_RECOVERY_SWIPE := true
 
@@ -104,10 +105,10 @@ TARGET_DISPLAY_USE_RETIRE_FENCE := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 BLUETOOTH_HCI_USE_MCT := true
 
-TARGET_BOOTLOADER_BOARD_NAME := awifi
-TARGET_BOOTLOADER_NAME=v500
+TARGET_BOOTLOADER_BOARD_NAME := palman
+TARGET_BOOTLOADER_NAME=palman
 
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/v500/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/palman/bluetooth
 
 # FIXME: HOSTAPD-derived wifi driver
 BOARD_HAS_QCOM_WLAN := true
@@ -119,12 +120,12 @@ BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
 
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_RECOVERY_LCD_BACKLIGHT_PATH := \"/sys/class/leds/lcd-backlight/brightness\"
-TARGET_RECOVERY_FSTAB = device/lge/v500/fstab.gvar
+TARGET_RECOVERY_FSTAB = device/lge/palman/recovery.fstab
 
 BOARD_HAS_NO_SELECT_BUTTON := true
 
 BOARD_SEPOLICY_DIRS += \
-        device/lge/v500/sepolicy
+        device/lge/palman/sepolicy
 
 BOARD_SEPOLICY_UNION := \
         app.te \
@@ -146,10 +147,25 @@ BOARD_SEPOLICY_UNION := \
         ueventd.te \
         wpa.te
 
-TARGET_RELEASETOOLS_EXTENSIONS := device/lge/v500/releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := device/lge/palman/releasetools
 
 BOARD_USES_QC_TIME_SERVICES := true
 
 COMMON_GLOBAL_CFLAGS += -DBOARD_CHARGING_CMDLINE_NAME='"androidboot.mode"' -DBOARD_CHARGING_CMDLINE_VALUE='"chargerlogo"'
 
-BOARD_HARDWARE_CLASS := device/lge/v500/cmhw/
+#TWRP config:
+DEVICE_RESOLUTION := 1200x1920
+RECOVERY_SDCARD_ON_DATA := true
+TW_INCLUDE_JB_CRYPTO := true
+TW_INTERNAL_STORAGE_PATH := "/data/media"
+TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
+TW_EXTERNAL_STORAGE_PATH := "/usb-otg"
+TW_EXTERNAL_STORAGE_MOUNT_POINT := "usb-otg"
+#TW_CUSTOM_POWER_BUTTON := 107
+TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
+TW_MAX_BRIGHTNESS := 255
+TW_NO_SCREEN_BLANK := true
+TW_NO_REBOOT_BOOTLOADER := true
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
+PRODUCT_COPY_FILES += device/lge/palman/twrp.fstab:recovery/root/etc/twrp.fstab
+

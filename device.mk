@@ -33,10 +33,10 @@ PRODUCT_PACKAGES += \
         librs_jni
 
 PRODUCT_COPY_FILES += \
-        $(LOCAL_PATH)/init.awifi.usb.rc:root/init.awifi.usb.rc \
-	$(LOCAL_PATH)/init.awifi.rc:root/init.awifi.rc \
-	$(LOCAL_PATH)/fstab.gvar:root/fstab.awifi \
-	$(LOCAL_PATH)/ueventd.awifi.rc:root/ueventd.awifi.rc
+        $(LOCAL_PATH)/init.palman.usb.rc:root/init.palman.usb.rc \
+	$(LOCAL_PATH)/init.palman.rc:root/init.palman.rc \
+	$(LOCAL_PATH)/fstab.palman:root/fstab.palman \
+	$(LOCAL_PATH)/ueventd.palman.rc:root/ueventd.palman.rc
 
 PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/WCNSS_cfg.dat:system/vendor/firmware/wlan/prima/WCNSS_cfg.dat \
@@ -55,7 +55,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/hs_detect.kl:system/usr/keylayout/hs_detect.kl \
 	$(LOCAL_PATH)/pmic8xxx_pwrkey.kl:system/usr/keylayout/pmic8xxx_pwrkey.kl \
-	$(LOCAL_PATH)/awifi-keypad-8064.kl:system/usr/keylayout/awifi-keypad-8064.kl
+	$(LOCAL_PATH)/palman-keypad-8064.kl:system/usr/keylayout/palman-keypad-8064.kl
 
 # Prebuilt input device calibration files
 PRODUCT_COPY_FILES += \
