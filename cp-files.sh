@@ -11,7 +11,7 @@ for FILE in `cat proprietary-blobs.txt | grep -v ^# | grep -v ^$ `; do
     if [ ! -d $BASE/$DIR ]; then
         mkdir -p $BASE/$DIR
     fi
-    adb pull /system/$FILE $BASE/$FILE
+    cp "/home/aidfarh/Downloads/LG G Pad/2014-11-30--23-35-25 LRX21P.L004/system/$FILE" $BASE/$FILE
 done
 
 ./setup-makefiles.sh
