@@ -47,10 +47,6 @@ on post-fs-data
     chown system system /dev/wcnss_wlan
     write /sys/module/wcnss_ssr_8960/parameters/enable_riva_ssr 1
 
-    # Workaround for conn_init not copying the updated firmware
-#    rm /data/misc/wifi/WCNSS_qcom_cfg.ini
-#    rm /data/misc/wifi/WCNSS_qcom_wlan_nv.bin
-
     #Create directory used by sensor subsystem(dsps)
     mkdir /data/system/sensors
     chmod 665 /data/system/sensors
@@ -944,7 +940,7 @@ on property:ro.build.type=user
    write /sys/module/subsystem_restart/parameters/enable_ramdumps 0
    write /sys/module/wcnss_ssr_8960/parameters/enable_riva_ssr 1
 
-service conn_init /system/bin/conn_init
+service conn_init /system/bin/sh /system/etc/init.palman.wifi.sh
     class core
     user system
     group system wifi

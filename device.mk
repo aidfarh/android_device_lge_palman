@@ -176,6 +176,7 @@ PRODUCT_PACKAGES += \
 	hwaddrs
 
 PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/init.palman.wifi.sh:system/etc/init.palman.wifi.sh \
 	$(LOCAL_PATH)/init.qcom.bt.sh:system/etc/init.qcom.bt.sh
 
 PRODUCT_PROPERTY_OVERRIDES += \
