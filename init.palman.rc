@@ -528,6 +528,9 @@ on boot
     chown system system /sys/devices/virtual/graphics/fb1/format_3d
     chown system system /sys/devices/virtual/graphics/fb1/hpd
 
+    # enable exfat feature
+    insmod /system/lib/modules/exfat.ko
+
 on fs
 # LGE_CHANGED_S [2013-02-14][jungjoo.nahm@lge.com] for widevine drm and lgdrm(future-use)
     chown system system /persist-lg
@@ -828,14 +831,6 @@ service fm_dl /system/bin/sh /system/etc/init.qcom.fm.sh
     group system qcom_oncrpc
     disabled
     oneshot
-
-on property:crypto.driver.load=1
-     insmod /system/lib/modules/qce.ko
-     insmod /system/lib/modules/qcedev.ko
-
-on property:crypto.driver.load=0
-     exec /system/bin/rmmod qcedev.ko
-     exec /system/bin/rmmod qce.ko
 
 service drmdiag /system/bin/drmdiagapp
     class late_start
