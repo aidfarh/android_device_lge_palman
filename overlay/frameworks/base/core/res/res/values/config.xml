@@ -116,9 +116,6 @@
 
     <bool name="config_lidControlsSleep">true</bool>
 
-    <!--  Maximum number of supported users -->
-    <integer name="config_multiuserMaximumUsers">8</integer>
-
     <bool name="config_enableWifiDisplay">true</bool>
 
     <!-- Array of allowable ConnectivityManager network types for tethering -->
