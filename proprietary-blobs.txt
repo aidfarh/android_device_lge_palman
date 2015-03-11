@@ -19,6 +19,11 @@ bin/rmt_storage
 bin/sensors.qcom
 bin/thermald
 bin/time_daemon
+etc/firmware/tzapps.b00
+etc/firmware/tzapps.b01
+etc/firmware/tzapps.b02
+etc/firmware/tzapps.b03
+etc/firmware/tzapps.mdt
 etc/firmware/vidc_1080p.fw
 etc/firmware/vidc.b00
 etc/firmware/vidc.b01
@@ -120,6 +125,11 @@ vendor/firmware/a300_pfp.fw
 vendor/firmware/a300_pm4.fw
 vendor/firmware/bcm2079x_firmware.ncd
 vendor/firmware/bcm2079x_pre_firmware.ncd
+vendor/firmware/discretix/dxhdcp2.b00
+vendor/firmware/discretix/dxhdcp2.b01
+vendor/firmware/discretix/dxhdcp2.b02
+vendor/firmware/discretix/dxhdcp2.b03
+vendor/firmware/discretix/dxhdcp2.mdt
 vendor/firmware/dsps.b00
 vendor/firmware/dsps.b01
 vendor/firmware/dsps.b02
@@ -140,6 +150,11 @@ vendor/firmware/gss.b09
 vendor/firmware/gss.b10
 vendor/firmware/gss.b11
 vendor/firmware/gss.mdt
+vendor/firmware/keymaster/keymaster.b00
+vendor/firmware/keymaster/keymaster.b01
+vendor/firmware/keymaster/keymaster.b02
+vendor/firmware/keymaster/keymaster.b03
+vendor/firmware/keymaster/keymaster.mdt
 vendor/firmware/q6.b00
 vendor/firmware/q6.b01
 vendor/firmware/q6.b03
@@ -154,6 +169,7 @@ vendor/firmware/wcnss.b04
 vendor/firmware/wcnss.b05
 vendor/firmware/wcnss.b06
 vendor/firmware/wcnss.mdt
+vendor/lib/drm/libdrmwvmplugin.so
 vendor/lib/egl/eglsubAndroid.so
 vendor/lib/egl/libEGL_adreno.so
 vendor/lib/egl/libGLESv1_CM_adreno.so
