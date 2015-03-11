@@ -363,14 +363,14 @@ on init
     mkdir /storage 0550 system sdcard_r
     mkdir /storage/emulated 0555 root root
     mkdir /storage/emulated/legacy 0555 root root
-    mkdir /storage/sdcard1 0000 system system
-    mkdir /storage/usb 0000 system system
+    mkdir /storage/sdcard1 0775 system system
+    mkdir /storage/usb 0775 system system
 
 
     export EXTERNAL_STORAGE /storage/emulated/legacy
     export EMULATED_STORAGE_SOURCE /mnt/shell/emulated
     export EMULATED_STORAGE_TARGET /storage/emulated
-    export SECONDARY_STORAGE /storage/sdcard1:/storage/usb
+    export SECONDARY_STORAGE /storage/sdcard1
 
     # Support legacy paths
 	#2013.03.13 add symlink for Docomo PlayReady DRM[START] 
@@ -665,7 +665,7 @@ service dbus /system/bin/dbus-daemon --system --nofork
 on property:ro.qc.bluetooth.stack=bluez
     start dbus
 
-service bluetoothd /system/bin/logwrapper /system/bin/bluetoothd -n
+service bluetoothd /system/bin/bluetoothd -n
     class main
     socket bluetooth stream 660 bluetooth bluetooth
     socket dbus_bluetooth stream 660 bluetooth bluetooth
