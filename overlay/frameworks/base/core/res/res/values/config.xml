@@ -143,6 +143,12 @@
     <integer name="config_multiuserMaximumUsers">8</integer>
     <!-- Whether UI for multi user should be shown -->
     <bool name="config_enableMultiUserUI">true</bool>
+    <string-array name="config_locationProviderPackageNames" translatable="false">
+        <!-- The standard AOSP fused location provider -->
+        <item>com.android.location.fused</item>
+        <!-- Current Google location provider -->
+        <item>com.google.android.gms</item>
+    </string-array>
 
     <!-- SD card is hot-pluggable on this device -->
     <bool name="config_batterySdCardAccessibility">true</bool>

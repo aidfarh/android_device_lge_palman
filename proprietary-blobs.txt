@@ -3,7 +3,6 @@ bin/bridgemgrd
 bin/btnvtool
 bin/ds_fmc_appd
 bin/efsks
-bin/gsiff_daemon
 bin/hci_qcomm_init
 bin/ks
 bin/mm-qcamera-daemon
@@ -11,7 +10,6 @@ bin/mpdecision
 bin/netmgrd
 bin/port-bridge
 bin/qcks
-bin/qmiproxy
 bin/qmuxd
 bin/qseecomd
 bin/radish
@@ -36,7 +34,6 @@ lib/hw/sensors.msm8960.so
 lib/libacdbloader.so
 lib/libadsprpc.so
 lib/libAKM.so
-lib/libalsautils.so
 lib/libaudcal.so
 lib/libaudioalsa.so
 lib/libchromatix_imx111_default_video.so
@@ -79,7 +76,6 @@ lib/libHDR.so
 lib/libidl.so
 lib/libimage-jpeg-enc-omx-comp.so
 lib/libimage-omx-common.so
-lib/liblgftmitem.so
 lib/libloc_adapter.so
 lib/libloc_api_v02.so
 lib/libloc_eng.so
@@ -98,7 +94,6 @@ lib/libmmstillomx.so
 lib/libmorpho_noise_reduction.so
 lib/libnetmgr.so
 lib/liboemcamera.so
-lib/libqc-opt.so
 lib/libqcci_legacy.so
 lib/libqdi.so
 lib/libqdp.so
@@ -118,9 +113,7 @@ lib/libsensor_reg.so
 lib/libsensor_user_cal.so
 lib/libsensor1.so
 lib/libtime_genoff.so
-lib/libWVphoneAPI.so
 lib/libxml.so
-lib/libxt_v02.so
 vendor/firmware/a300_pfp.fw
 vendor/firmware/a300_pm4.fw
 vendor/firmware/bcm2079x_firmware.ncd

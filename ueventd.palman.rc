@@ -72,9 +72,9 @@
 /dev/jpeg0                0660   system     camera
 /dev/jpeg1                0660   system     camera
 /dev/jpeg2                0660   system     camera
-#[AWIFI][GNSS] sangeun88.kim@lge.com 2013-05-20 Add WGR7640 Image [START]
-/dev/gss                  0660   gps        gps
-#[AWIFI][GNSS] sangeun88.kim@lge.com 2013-05-20 Add WGR7640 Image [START]
+#[palman][GNSS] byunghyun0424.kim@lge.com 2013-09-28 Add WGR7640 Image [START]
+/dev/gss                  0660   system     gps
+#[palman][GNSS] byunghyun0424.kim@lge.com 2013-09-28 Add WGR7640 Image [START]
 /dev/msm_camera/*         0660   system     camera
 /dev/gemini/              0660   system     camera
 /dev/mercury0             0660   system     camera
